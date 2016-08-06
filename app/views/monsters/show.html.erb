@@ -2,3 +2,5 @@
 
 <p>Health: <%= @monster.health %></p>
 <%= image_tag @monster.image_url %>
+<br>
+<%= link_to "[Edit]", edit_monster_path( @monster.id ) %>

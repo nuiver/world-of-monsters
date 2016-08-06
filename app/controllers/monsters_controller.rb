@@ -13,8 +13,7 @@ class MonstersController < ApplicationController
   end
 
   def create
-
-    monster_params = params.require( :monster ).permit( :name, :health, :image_url )
+    monster_params
 
     @monster = Monster.new( monster_params )
 
@@ -24,5 +23,28 @@ class MonstersController < ApplicationController
        render 'new'
     end
   end
+
+  def edit
+    @monster = Monster.find(params[:id])
+  end
+
+  def update
+    @monster = Monster.find( params[:id] )
+
+    monster_params
+
+    if @monster.update_attributes( monster_params )
+       redirect_to @monster
+    else
+       render 'edit'
+    end
+  end
+
+private
+
+  def monster_params
+    params.require( :monster ).permit( :name, :health, :image_url )
+  end
+
 
 end

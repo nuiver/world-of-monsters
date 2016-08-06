@@ -8,4 +8,8 @@ class MonstersController < ApplicationController
     @monster = Monster.find(params[:id])
   end
 
+  def new
+    @monster = Monster.new
+  end
+  
 end

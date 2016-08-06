@@ -1,0 +1,12 @@
+<%= form_for @monster do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :health %>
+    <%= f.number_field :health %>
+
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+
+    <%= f.submit "Create" %>
+<% end %>

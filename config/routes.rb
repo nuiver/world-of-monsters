@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :streets
   resources :monsters
   # get "monsters" => "monsters#index"
   #

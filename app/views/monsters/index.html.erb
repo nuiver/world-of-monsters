@@ -1,5 +1,7 @@
 <h1>Monsters</h1>
 
 <% @monsters.each do |monster| %>
-<p><%= link_to monster.name, monster_path(monster.id) %></p>
+  <p><%= link_to monster.name, monster_path(monster.id) %></p>
 <% end %>
+
+<%= link_to "[New Monster]", new_monster_path %>

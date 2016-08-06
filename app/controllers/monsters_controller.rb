@@ -11,5 +11,18 @@ class MonstersController < ApplicationController
   def new
     @monster = Monster.new
   end
-  
+
+  def create
+
+    monster_params = params.require( :monster ).permit( :name, :health, :image_url )
+
+    @monster = Monster.new( monster_params )
+
+    if @monster.save
+       redirect_to @monster
+    else
+       render 'new'
+    end
+  end
+
 end
